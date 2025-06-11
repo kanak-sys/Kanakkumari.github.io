@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Kanak's Candle Shop</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffefc;
+      color: #333;
+      transition: background-color 0.3s ease;
+    }
+    header {
+      background: #ffccbc;
+      padding: 25px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      background: #fff3e0;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #e65100;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+      animation: slideUp 0.8s ease;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: #fbe9e7;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ddd;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px;
+      background: #ff7043;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background: #e65100;
+      transform: scale(1.05);
+    }
+    .socials {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .socials a {
+      margin: 10px;
+      display: inline-block;
+      background: #ffe0b2;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .socials a:hover {
+      background: #ffab91;
+      transform: scale(1.05);
+    }
+    footer {
+      background: #ffe0b2;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you 💬</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section>
+    <form action="mailto:mkanak0402@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="socials">
+      <a href="https://wa.me/919155870775" target="_blank">📱 WhatsApp</a>
+      <a href="https://www.instagram.com/kanak_mishra_._?igsh=dDQwOGMyMmw1cGZ4" target="_blank">📸 Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    📧 <a href="mailto:mkanak0402@gmail.com">mkanak0402@gmail.com</a> |
+    📱 <a href="https://wa.me/919155870775">WhatsApp</a> |
+    📸 <a href="https://www.instagram.com/kanak_mishra_._?igsh=dDQwOGMyMmw1cGZ4">Instagram</a> <br>
+    <br>© 2025 Kanak's Candle Shop | Lighting lives beautifully
+  </footer>
+
+</body>
+</html>
