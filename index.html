@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanak's Candle Shop</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffefc;
+      color: #333;
+    }
+    header {
+      background: #ffccbc;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #fff3e0;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product {
+      background: #fbe9e7;
+      border-radius: 10px;
+      padding: 15px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 0 10px #ddd;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #ff7043;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #e65100;
+      transform: scale(1.05);
+    }
+    footer {
+      background: #ffe0b2;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kanak's Candle Shop</h1>
+    <p>Handmade Scented Candles | Crafted with Love 🕯️</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section id="products">
+    <h2 style="text-align: center;">🌟 Featured Candles</h2>
+    <div class="products">
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1b0?fit=crop&w=400&q=80" alt="Rose Candle" />
+        <h3>Rose Bliss</h3>
+        <p>₹199 - Romantic rose-scented candle.</p>
+        <button class="btn" onclick="pay('Rose Bliss', 19900)">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1611212163680-208aaabdfb63?fit=crop&w=400&q=80" alt="Lavender Candle" />
+        <h3>Lavender Calm</h3>
+        <p>₹249 - Soothing lavender aroma.</p>
+        <button class="btn" onclick="pay('Lavender Calm', 24900)">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1632767191986-b9582a32e2cc?fit=crop&w=400&q=80" alt="Vanilla Candle" />
+        <h3>Vanilla Dream</h3>
+        <p>₹179 - Sweet vanilla delight.</p>
+        <button class="btn" onclick="pay('Vanilla Dream', 17900)">Buy Now</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    📧 <a href="mailto:mkanak0402@gmail.com">mkanak0402@gmail.com</a> |
+    📱 <a href="https://wa.me/919155870775">WhatsApp</a> |
+    📸 <a href="https://www.instagram.com/kanak_mishra_._?igsh=dDQwOGMyMmw1cGZ4" target="_blank">Instagram</a> <br>
+    <br>© 2025 Kanak's Candle Shop | Built with 💖
+  </footer>
+
+  <!-- Razorpay Script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    function pay(product, amount) {
+      var options = {
+        key: "rzp_test_YourKeyHere", // 🔑 Replace with your Razorpay key
+        amount: amount,
+        currency: "INR",
+        name: "Kanak's Candles",
+        description: product,
+        image: "https://i.ibb.co/FbHxwFY/candle-logo.png", // optional logo
+        handler: function (response){
+          alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: "Customer",
+          email: "",
+          contact: ""
+        },
+        theme: {
+          color: "#ff7043"
+        }
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+
+</body>
+</html>
